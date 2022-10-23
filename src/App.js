@@ -1,6 +1,18 @@
-import { Button, Typography } from '@mui/material';
+import { Button, Typography,styled } from '@mui/material';
 import { Add,Settings } from '@mui/icons-material';
 function App() {
+  const BlueButton = styled(Button) ({ 
+  backgroundColor: 'skyblue',
+  color: '#888',
+  margin:5,
+  "&:hover":{
+    backgroundColor: 'lightblue',
+  },
+  "&:disabled":{
+    backgroundColor: 'gray',
+    color: 'white',
+  }
+});
   return (
     <div>
       <Button variant="text">Text</Button>
@@ -24,13 +36,10 @@ function App() {
         Outlined
       </Button>
       <Typography variant="h1" component="p">
-        It uses h1 styles but it's a p tag
-      </Typography>;
-      <Button variant='contained' sx={{
-        backgroundColor: 'skyblue',
-        color: '#888',
-        margin:5
-      }} >My Unique button</Button>
+        It uses h1 style but it's a p tag
+      </Typography>
+      <BlueButton size="large"> My button </BlueButton>
+      <BlueButton size="large"> Another button </BlueButton>
     </div>
   );
 }
